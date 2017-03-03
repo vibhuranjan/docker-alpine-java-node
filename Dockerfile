@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk-alpine
 
-MAINTAINER UMAIR KAYANI
+MAINTAINER LoyaltyOne
 
 # install curl and bash
 RUN apk upgrade --update && \
