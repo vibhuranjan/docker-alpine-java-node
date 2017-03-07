@@ -15,3 +15,4 @@ In order for decryption
 to work, your docker container must be running on an ec2-instance with
 a role that has access to AWS KMS (and the master key used for encryption).
 
+
