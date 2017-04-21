@@ -33,4 +33,4 @@ RUN apk upgrade --update && \
     npm install -g kms-env@0.2.16
     
 COPY env-decrypt /usr/local/bin/
-ENTRYPOINT ["/usr/local/bin/env-decrypt"]    
+ENTRYPOINT ["/usr/local/bin/env-decrypt"]
