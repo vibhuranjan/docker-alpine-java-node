@@ -27,10 +27,10 @@ RUN set -x \
 		openjdk8-jre="$JAVA_ALPINE_VERSION" \
 	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]
 		
-# install curl, bash and kms-env
+# install curl, bash and kms-env 0.2.16
 RUN apk upgrade --update && \
     apk add --update curl bash && \
-    npm install -g kms-env
+    npm install -g kms-env@0.2.16
     
 COPY env-decrypt /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/env-decrypt"]    
