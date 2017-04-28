@@ -5,6 +5,7 @@ A compact docker image based on Alpine Linux with:
 - JRE 8 (8u111)
 - NodeJS 7 (7.7.1)
 - kms-env 
+- s3-copy
 
 In addition to having node and java installed, this image
 comes with [kms-env](https://github.com/ukayani/kms-env) installed.

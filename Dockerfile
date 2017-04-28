@@ -30,7 +30,8 @@ RUN set -x \
 # install curl, bash and kms-env 0.2.16
 RUN apk upgrade --update && \
     apk add --update curl bash && \
-    npm install -g kms-env@0.2.16
+    npm install -g kms-env@0.2.16 && \
+	npm install -g s3-copy@0.0.2
     
 COPY env-decrypt /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/env-decrypt"]
