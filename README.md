@@ -2,8 +2,8 @@
 
 A compact docker image based on Alpine Linux with:
 
-- JRE 8 (8u111)
-- NodeJS 7 (7.7.1)
+- JRE 8 (8u131)
+- NodeJS 8 (8.1.2)
 - kms-env 
 - s3-copy
 
