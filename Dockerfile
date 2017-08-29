@@ -1,4 +1,4 @@
-FROM node:8.1.2-alpine
+FROM node:8-alpine
 
 MAINTAINER LoyaltyOne
 
@@ -25,12 +25,15 @@ ENV JAVA_ALPINE_VERSION 8.131.11-r2
 RUN set -x \
 	&& apk add --no-cache \
 		openjdk8-jre="$JAVA_ALPINE_VERSION" \
-	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]
-		
-# install curl, bash, kms-env 0.2.16 and s3-copy 0.0.2
+	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]			
+			
+# install curl, bash and kms-env 0.2.16
 RUN apk upgrade --update && \
-    apk add --update curl bash && \
-    npm install -g kms-env@0.2.16 s3-copy@0.0.2
+    apk add groff less python py-pip curl bash && \
+	pip install awscli && \
+	apk --purge -v del py-pip && \
+	rm /var/cache/apk/* && \
+    npm install -g kms-env@0.2.16 && s3-copy@0.0.2
     
 COPY env-decrypt /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/env-decrypt"]
