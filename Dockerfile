@@ -33,7 +33,7 @@ RUN apk upgrade --update && \
 	pip install awscli && \
 	apk --purge -v del py-pip && \
 	rm /var/cache/apk/* && \
-    npm install -g kms-env@0.2.16 && s3-copy@0.0.2
+    npm install -g kms-env@0.2.16 s3-copy@0.0.2
     
-COPY env-decrypt /usr/local/bin/
+COPY env-decrypt s3-cp /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/env-decrypt"]
