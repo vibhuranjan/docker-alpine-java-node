@@ -2,7 +2,7 @@ FROM node:10.7-alpine
 
 MAINTAINER LoyaltyOne
 
-# install JRE 8 see: https://github.com/docker-library/openjdk/blob/master/8-jre/alpine/Dockerfile
+# install JRE 8 see: https://github.com/docker-library/openjdk/blob/master/8-jre/alpine/Dockerfile 
 
 # Default to UTF-8 file.encoding
 ENV LANG C.UTF-8
